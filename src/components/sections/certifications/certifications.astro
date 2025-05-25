@@ -1,0 +1,21 @@
+---
+import Box from "@/components/box/index.astro";
+import BoxHeader from "@/components/box/header.astro";
+import BoxTitle from "@/components/box/title.astro";
+import BoxContent from "@/components/box/content.astro";
+import { CERTIFICATIONS } from "@/lib/constants/certifications";
+import CertificationItem from "./certification-item.astro";
+---
+
+<Box>
+  <BoxHeader>
+    <BoxTitle> Certifications </BoxTitle>
+  </BoxHeader>
+  <BoxContent className="px-0">
+    {
+      CERTIFICATIONS.map(certification => {
+        return <CertificationItem certification={certification} />;
+      })
+    }
+  </BoxContent>
+</Box>

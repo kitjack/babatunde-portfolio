@@ -1,0 +1,19 @@
+---
+import type { Certification } from "@/lib/types";
+
+export interface Props {
+  certification: Certification;
+}
+
+const { certification } = Astro.props;
+---
+
+<div class="border-b px-4 py-3 last:border-b-0">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center justify-between">
+      <h3 class="font-semibold text-sm">{certification.name}</h3>
+      <span class="text-xs text-muted-foreground">{certification.year}</span>
+    </div>
+    <p class="text-sm text-muted-foreground">{certification.issuer}</p>
+  </div>
+</div>
